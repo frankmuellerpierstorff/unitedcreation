@@ -1,115 +1,211 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>United Creation – Flow</title>
+  <title>United-Creation — Flow for Ableton</title>
+  <meta name="description" content="United-Creation launches Flow — an Ableton-only tool that turns an 8-bar idea into a full, editable arrangement without lock-in." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: sans-serif;
-      color: #111;
-      background: #fff;
-      line-height: 1.5;
+    :root{
+      --bg:#ffffff;
+      --ink:#0b0b0c;
+      --muted:#6a6a6a;
+      --accent:#111;
+      --pad: clamp(16px, 3vw, 40px);
+      --max: 1180px;
+
+      /* color seeds for the floral panels (pastel but vivid) */
+      --c1: 275 90% 70%;
+      --c2: 195 90% 65%;
+      --c3: 140 75% 58%;
+      --c4: 18 92% 65%;
+      --c5: 328 80% 70%;
+      --c6: 50 95% 62%;
+      --c7: 210 90% 60%;
     }
-    .hero {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 0 2rem;
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:"Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.4;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
     }
-    .hero h1 {
-      font-size: 3rem;
-      margin: 0.5rem 0;
+
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 var(--pad);}
+    header.site{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: var(--pad) var(--pad) calc(var(--pad) * 0.5);
+      position:sticky; top:0; background:rgba(255,255,255,0.75); backdrop-filter:saturate(140%) blur(6px);
+      border-bottom:1px solid #eee;
+      z-index:10;
     }
-    .hero p {
-      font-size: 1.25rem;
-      max-width: 600px;
+    .brand{
+      font-weight:700; letter-spacing:.2px; font-size:clamp(16px,1.8vw,18px);
     }
-    .btn-primary {
-      margin-top: 2rem;
-      padding: 1rem 2rem;
-      background: #ff6600; /* Beispielakzentfarbe */
-      color: white;
-      border: none;
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: transform 0.2s;
+    .badge{
+      font-size:12px; letter-spacing:.3px; padding:.35rem .6rem; border:1px solid #ddd; border-radius:999px; color:var(--muted);
     }
-    .btn-primary:hover {
-      transform: scale(1.05);
+    .cta{ display:inline-block; text-decoration:none; color:#fff; background:#111; padding:.85rem 1.15rem; border-radius:999px; font-weight:600; transition:transform .15s ease, opacity .2s;}
+    .cta:hover{ transform:translateY(-1px); opacity:.92;}
+
+    /* hero */
+    .hero{
+      padding: clamp(40px, 8vw, 120px) var(--pad) clamp(24px, 6vw, 64px);
     }
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      padding: 4rem 2rem;
+    .hero h1{
+      font-size: clamp(40px, 8.5vw, 96px);
+      line-height: .95; margin: .2em 0 .1em;
+      letter-spacing:-0.5px;
     }
-    .feature-card {
-      border: 1px solid #ddd;
-      padding: 2rem;
-      text-align: center;
-      transition: box-shadow 0.2s;
+    .hero p{
+      max-width: 48ch; font-size: clamp(16px, 2vw, 22px); color:var(--muted);
     }
-    .feature-card:hover {
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    .hero .actions{ display:flex; gap:12px; margin-top:22px; align-items:center; flex-wrap:wrap;}
+    .ghost{
+      display:inline-block; padding:.85rem 1.15rem; border:1px solid #ddd; border-radius:999px; text-decoration:none; color:var(--ink);
     }
-    .feature-card h3 {
-      margin-top: 1rem;
-      font-size: 1.5rem;
+
+    /* floral teaser panels */
+    .panel{
+      min-height: 88vh;
+      display:flex; align-items:flex-end;
+      position:relative; overflow:hidden;
+      border-top:1px solid #eee;
     }
-    .feature-card p {
-      font-size: 1rem;
-      color: #555;
+    .panel .copy{
+      position:relative; z-index:2; padding: clamp(24px, 4vw, 48px);
+      color:#0a0a0a;
+      mix-blend-mode:multiply;
     }
-    .section {
-      padding: 4rem 2rem;
+    .panel h2{
+      font-size: clamp(30px, 6.8vw, 72px);
+      line-height: .98; margin:0 0 .2em;
+      letter-spacing:-0.3px;
+      max-width: 16ch;
     }
-    .footer {
-      background: #f5f5f5;
-      padding: 2rem;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #777;
+    .panel p{
+      font-size: clamp(15px, 1.8vw, 20px);
+      color:#202022;
+      max-width: 60ch;
+      margin:0;
+    }
+    /* abstract floral backgrounds using layered radial + conic gradients */
+    .bg{position:absolute; inset:-15%}
+    .bg--1{ background:
+        radial-gradient(60% 60% at 20% 25%, hsl(var(--c1) / .55), transparent 60%),
+        radial-gradient(45% 45% at 80% 30%, hsl(var(--c2) / .55), transparent 60%),
+        radial-gradient(50% 60% at 60% 80%, hsl(var(--c6) / .45), transparent 60%),
+        conic-gradient(from 120deg at 60% 40%, hsl(var(--c1) / .15), hsl(var(--c2) / .12), hsl(var(--c6) / .12), hsl(var(--c1) / .15));
+      filter: saturate(1.05) contrast(1.02);
+    }
+    .bg--2{ background:
+        radial-gradient(55% 55% at 25% 70%, hsl(var(--c3) / .55), transparent 58%),
+        radial-gradient(40% 60% at 75% 25%, hsl(var(--c5) / .50), transparent 58%),
+        radial-gradient(60% 40% at 50% 50%, hsl(var(--c7) / .35), transparent 58%),
+        conic-gradient(from 220deg at 45% 40%, hsl(var(--c3) / .14), hsl(var(--c5) / .14), hsl(var(--c7) / .12), hsl(var(--c3) / .14));
+      filter: saturate(1.05) contrast(1.02);
+    }
+    .bg--3{ background:
+        radial-gradient(60% 50% at 70% 35%, hsl(var(--c4) / .52), transparent 60%),
+        radial-gradient(40% 55% at 30% 70%, hsl(var(--c2) / .52), transparent 58%),
+        radial-gradient(45% 45% at 50% 50%, hsl(var(--c5) / .40), transparent 58%),
+        conic-gradient(from 160deg at 55% 45%, hsl(var(--c4) / .12), hsl(var(--c2) / .12), hsl(var(--c5) / .10), hsl(var(--c4) / .12));
+      filter: saturate(1.05) contrast(1.02);
+    }
+    .bg--4{ background:
+        radial-gradient(58% 58% at 25% 35%, hsl(var(--c7) / .52), transparent 58%),
+        radial-gradient(45% 65% at 75% 65%, hsl(var(--c1) / .50), transparent 58%),
+        radial-gradient(45% 45% at 50% 50%, hsl(var(--c6) / .38), transparent 58%),
+        conic-gradient(from 60deg at 50% 50%, hsl(var(--c7) / .12), hsl(var(--c1) / .12), hsl(var(--c6) / .10), hsl(var(--c7) / .12));
+      filter: saturate(1.05) contrast(1.02);
+    }
+
+    /* footer */
+    footer{
+      padding: 48px var(--pad) 80px;
+      border-top:1px solid #eee;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* small helpers */
+    .sr{position:absolute!important; width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media (prefers-reduced-motion:no-preference){
+      .panel .bg{ transition: transform 12s ease;}
+      .panel:hover .bg{ transform: scale(1.06) rotate(0.5deg); }
     }
   </style>
 </head>
 <body>
-  <header class="hero">
-    <h1>Flow by United Creation</h1>
-    <p>Das erste Tool, das mit dir lernt, um deine musikalische Kreativität zu entfesseln.</p>
-    <button class="btn-primary">Try Flow</button>
+  <header class="site wrap">
+    <div class="brand">United-Creation</div>
+    <span class="badge">Ableton Live only</span>
   </header>
 
-  <section class="features section">
-    <div class="feature-card">
-      <h3>Smart Automation</h3>
-      <p>Flow erkennt deine Patterns und schlägt dir neue Sounds vor.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Native Integration</h3>
-      <p>Funktioniert nahtlos mit DAWs & Instruments.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Live Feedback</h3>
-      <p>Direktes Feedback & Vorschläge während deines Workflows.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Zukunftssicherheit</h3>
-      <p>Erweiterbar & lernfähig – investiere in deine Musik-Zukunft.</p>
-    </div>
-  </section>
+  <main>
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <h1 id="hero-title">Flow</h1>
+      <p>Turn an 8-bar idea into a full, editable arrangement — inside Ableton Live. No lock-in. Your clips, your rules.</p>
+      <div class="actions">
+        <a class="cta" href="#join">Join the beta</a>
+        <a class="ghost" href="#learn">Learn more</a>
+      </div>
+    </section>
 
-  <section class="section">
-    <h2>Über United Creation</h2>
-    <p>Wir glauben, dass Musiker:innen Tools verdienen, die nicht nur funktionieren, sondern mit ihnen wachsen.</p>
-  </section>
+    <!-- Floral teaser panels -->
+    <section class="panel" id="learn" aria-labelledby="t1">
+      <div class="bg bg--1" aria-hidden="true"></div>
+      <div class="copy wrap">
+        <h2 id="t1">From one scene to a song.</h2>
+        <p>Flow expands a single scene into a complete structure: intro, lift, drop, breakdown, outro — mapped to your clips.</p>
+      </div>
+    </section>
 
-  <footer class="footer">
-    &copy; 2025 United Creation. All rights reserved.
+    <section class="panel" aria-labelledby="t2">
+      <div class="bg bg--2" aria-hidden="true"></div>
+      <div class="copy wrap">
+        <h2 id="t2">Editable. Always.</h2>
+        <p>No frozen audio tricks. Keep everything MIDI/clip-based so you can tweak patterns, sound design, and automation at any time.</p>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="t3">
+      <div class="bg bg--3" aria-hidden="true"></div>
+      <div class="copy wrap">
+        <h2 id="t3">Built for Live, not around it.</h2>
+        <p>Works with Ableton Live 12. Uses scenes you already have. Zero external project files. Keep your workflow. Go faster.</p>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="t4">
+      <div class="bg bg--4" aria-hidden="true"></div>
+      <div class="copy wrap">
+        <h2 id="t4">Dub techno & beyond.</h2>
+        <p>Deep, evolving arrangements for dub, house, and techno. Subtle motion; solid structure; headroom for live performance.</p>
+      </div>
+    </section>
+
+    <section class="wrap" id="join" style="padding:64px var(--pad) 96px">
+      <h2 style="font-size:clamp(28px,4vw,42px); margin:.2em 0 .4em;">Join the beta</h2>
+      <p style="max-width:60ch; color:var(--muted); margin:0 0 16px;">
+        Early access for producers working in Ableton Live 12. We’ll invite in small waves to keep feedback tight.
+      </p>
+      <!-- replace with your signup link or form -->
+      <a class="cta" href="https://example.com/signup">Request invite</a>
+      <span style="margin-left:12px; font-size:14px; color:var(--muted);">no spam • cancel anytime</span>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    © <span id="y"></span> United-Creation • built by artists for artists
+    <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
   </footer>
 </body>
 </html>
