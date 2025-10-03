@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>United Creation — Flow (Closed Beta)</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow-x: hidden;
+      color: #fff;
+      background-color: #000;
+      font-family: sans-serif;
+    }
+    .logo {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 100;
+      width: 120px;
+      height: auto;
+    }
+    .logo svg {
+      width: 100%;
+      height: auto;
+    }
+    section {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    section .bg {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    section .content {
+      padding: 1rem;
+      max-width: 800px;
+      z-index: 10;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border: 1px solid #fff;
+      color: #fff;
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .btn:hover {
+      background-color: #fff;
+      color: #000;
+    }
+    /* Responsive Anpassungen */
+    @media (max-width: 768px) {
+      .logo {
+        width: 80px;
+      }
+      section .content {
+        padding: 0.5rem;
+      }
+    }
+    footer {
+      background: #111;
+      color: #888;
+      padding: 2rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logo (SVG) -->
+  <div class="logo">
+    <!-- Beispiel-SVG, ersetze durch dein Logo -->
+    <svg viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
+      <text x="0" y="20" font-size="20" fill="white">UC</text>
+    </svg>
+  </div>
+
+  <!-- Abschnitt 1: Einstieg -->
+  <section id="hero">
+    <img class="bg" src="pfad/zu/deinem-hintergrund-desktop.jpg" alt="" 
+         srcset="pfad/zu/deinem-hintergrund-mobil.jpg 600w, pfad/zu/deinem-hintergrund-desktop.jpg 1200w">
+    <div class="content">
+      <h1>United Creation</h1>
+      <p>We build tools that open up new possibilities — but only when you need them.</p>
+      <a class="btn" href="#signup">Join Closed Beta</a>
+    </div>
+  </section>
+
+  <!-- Abschnitt 2: Bild + Text (umgedreht) -->
+  <section id="about">
+    <img class="bg" src="pfad/zu/anderem-hintergrund.jpg" alt="">
+    <div class="content">
+      <h2>An Evolution of Flow</h2>
+      <p>Stille. Bewegung. Im Fluss. Tools, die mit dir atmen, nicht über dich bestimmen.</p>
+    </div>
+  </section>
+
+  <!-- Abschnitt 3: Anmeldebereich -->
+  <section id="signup">
+    <img class="bg" src="pfad/zu/hintergrund3.jpg" alt="">
+    <div class="content">
+      <h2>Closed Beta für Flow</h2>
+      <p>Sei einer der ersten, die Zugang erhalten.</p>
+      <form action="DEIN_BACKEND_ENDPOINT" method="post">
+        <input type="email" name="email" placeholder="Deine Email" required style="padding:0.75rem; font-size:1rem; width:100%; max-width: 300px;">
+        <br><br>
+        <button class="btn" type="submit">Anmelden</button>
+      </form>
+      <p style="margin-top:1rem; font-size:0.85rem;">
+        Oder <a href="https://tally.so/DEIN_TALLY_LINK" target="_blank" class="btn" style="border:none; padding:0.5rem; background:transparent; color:#fff; text-decoration:underline;">zur Befragung</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 United Creation</p>
+    <p><a href="https://tally.so/DEIN_TALLY_LINK" target="_blank" style="color:#888; text-decoration:underline;">Tally</a></p>
+  </footer>
+
+</body>
+</html>
