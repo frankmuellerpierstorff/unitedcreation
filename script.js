@@ -55,4 +55,27 @@
       setTimeout(playVideos, 100);
     }
   });
+  
+  // Continuously hide hero video controls
+  if (heroVideo) {
+    const hideControls = () => {
+      const controls = heroVideo.querySelectorAll('*');
+      controls.forEach(control => {
+        if (control.style) {
+          control.style.display = 'none';
+          control.style.visibility = 'hidden';
+          control.style.opacity = '0';
+        }
+      });
+    };
+    
+    // Hide controls immediately and continuously
+    hideControls();
+    setInterval(hideControls, 100);
+    
+    // Also hide on video events
+    heroVideo.addEventListener('loadeddata', hideControls);
+    heroVideo.addEventListener('playing', hideControls);
+    heroVideo.addEventListener('timeupdate', hideControls);
+  }
 })();
