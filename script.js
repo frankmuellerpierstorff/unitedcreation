@@ -40,6 +40,7 @@
   if (inlineVideo && inlinePlaceholder) {
     inlineVideo.addEventListener('playing', () => {
       inlinePlaceholder.style.display = 'none';
+      inlineVideo.style.display = 'block';
       inlineVideo.classList.add('playing');
     });
     

@@ -41,7 +41,6 @@ body{font-family:'Satoshi',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helve
 .container{max-width:var(--max);margin:0 auto}
 .inline-placeholder{width:100%;height:auto;border-radius:8px;display:block}
 .inline-video{width:100%;height:auto;border-radius:8px;display:none}
-.inline-video.playing{display:block}
 
 /* TEXT */
 .text-lg{font-size:32px;line-height:140%;text-align:center}
