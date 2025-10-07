@@ -1,134 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>United Creation</title>
-
-  <!-- Satoshi Font (Fontshare) -->
-  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap">
-
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Satoshi', sans-serif;
-      font-weight: 400;
-      background: radial-gradient(circle at 30% 40%, #f9f9f9, #ffffff);
-      color: rgba(0, 0, 0, 0.85);
-      font-size: clamp(24px, 8vw, 64px);
-      line-height: 1.25;
-      text-align: left;
-      overflow-x: hidden;
-    }
-
-    img.header-image {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .container {
-  width: 100%;
-  max-width: clamp(90%, 80vw, 1200px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 10vh 20px 40px 20px;
-  margin: 0 auto;
-
-
-
-    }
-
-    .text-block {
-      max-width: 100%;
-      width: 100%;
-    }
-
-    p {
-      margin: 0 0 2rem 0;
-    }
-
-    h5 {
-      font-size: clamp(16px, 2vw, 24px);
-      font-weight: 400;
-      margin-top: 10vh;
-      color: rgba(0, 0, 0, 0.85);
-    }
-
-    a, a:active, a:visited {
-      color: rgba(0, 0, 0, 0.85);
-      text-decoration: none;
-      border-bottom: 2px solid rgba(0, 0, 0, 0.85);
-    }
-
-    a:hover {
-      border-bottom: none;
-    }
-
-    @media (max-width: 768px) {
-      .container {
-        padding-top: 5vh;
-      }
-
-      .text-block {
-        max-width: none;
-      }
-    }
-  </style>
+  <link rel="icon" href="./favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
-
 <body>
+  <!-- HERO -->
+  <section class="hero">
+    <video class="hero__bg" autoplay muted loop playsinline preload="metadata">
+      <source src="./hero.mp4" type="video/mp4" />
+    </video>
 
-  <img src="background.png" alt="Header image" class="header-image" />
+    <header class="hero__header">
+      <img class="hero__logo" src="./logo@2x.png" alt="United Creation" />
+      <a class="btn btn--primary" href="https://tally.so/r/w8O9Zx" target="_blank" rel="noopener">Join our Beta Program</a>
+    </header>
 
-  <div class="container">
-    <div class="text-block">
-
-      <p>
-        United Creation is a platform for the future of music.
-Built for people who play, produce and perform.
-Who jam, experiment, surface ideas, and follow what emerges.
-Who know there’s nothing like being in flow —
-and nothing harder than getting back to it.
-</p>
-<p>
-We understand what it means to show up.
-To put in the effort refining what still doesn’t feel right.
-To practice the craft and invest until something moves.
-To sit through silence, doubt, and resistance —
-and keep going.
-</p>
-<p>
-We’re here to assist you.
-To support your artistic journey — and to inspire you.
-By building tools that open up new possibilities —
-but only when you need them.
-</p>
-<p>
-Tools that learn with you.
-That hold momentum when it’s fragile.
-That offer clarity when it’s clouded.
-</p>
-<p>
-This isn’t about automation.
-It’s about collaboration.
-Between human intuition and machine intelligence.
-Between structure and surprise.
-Between where you are and what’s just about to happen.
-</p>
-<p>
-We build systems that support musicians.
-Not just technically, but creatively.
-With presence, patience, and precision.
-      </p>
-
-      <h5>© 2025 United Creation · <a href="mailto:frank@united-creation.com">Contact</a> · <a href="https://www.united-creation.com/legal.html" target="_blank">Legal</a></h5>
-
+    <div class="hero__arrow" aria-hidden="true">
+      <img src="./arrow@2x.png" alt="Scroll down" style="height: 24px; width: auto;" />
     </div>
-  </div>
+  </section>
 
+  <!-- TEASER (blue) -->
+  <section class="teaser">
+    <div class="teaser__top fade-on-view">
+      <p class="text-lg">
+        United Creation is a platform for the future of music. Built for people who play, produce and perform. Who jam, experiment, surface ideas, and follow what emerges. Who know there's nothing like being in flow — and nothing harder than getting back to it.
+      </p>
+    </div>
+
+    <hr class="teaser__divider" />
+
+    <div class="teaser__center fade-on-view" data-delay="120">
+      <h2 class="teaser__title">The Beta Program</h2>
+      <p class="text-lg center">Our closed beta is an invitation to real pioneers who will help craft the next generation of music tools.</p>
+      <div class="center">
+        <a class="btn btn--primary" href="https://tally.so/r/w8O9Zx" target="_blank" rel="noopener">Join our Beta Program</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COPY + INLINE VIDEO -->
+  <section class="content">
+    <div class="container fade-on-view">
+      <p class="text-lg mb-80">
+        We understand what it means to show up. To put in the effort refining what still doesn't feel right. To practice the craft and invest until something moves. To sit through silence, doubt, and resistance — and keep going.
+      </p>
+      <p class="text-lg mb-80">
+        We're here to assist you. To support your artistic journey — and to inspire you. By building tools that open up new possibilities — but only when you need them.
+      </p>
+    </div>
+
+    <div class="container fade-on-view" data-delay="120">
+      <video class="inline-video" autoplay muted loop playsinline preload="metadata">
+        <source src="./inline.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <div class="container fade-on-view" data-delay="240">
+      <p class="text-lg mb-80">
+        This isn't about automation. It's about collaboration. Between human intuition and machine intelligence. Between structure and surprise.
+      </p>
+      <p class="text-lg mb-80">
+        We build systems that support musicians. Not just technically, but creatively. With presence, patience, and precision.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container center">
+      <div class="footer__content">
+        <p class="footer__line">© 2025 United Creation</p>
+        <p class="footer__links">
+          <a href="https://tally.so/r/w8O9Zx" target="_blank" rel="noopener">Beta Program</a>
+          · <a href="mailto:frank@united-creation.com">Contact</a>
+          · <a href="https://www.united-creation.com/legal.html" target="_blank" rel="noopener">Legal</a>
+        </p>
+        <p class="footer__single-line">
+          © 2025 United Creation · <a href="https://tally.so/r/w8O9Zx" target="_blank" rel="noopener">Beta Program</a> · <a href="mailto:frank@united-creation.com">Contact</a> · <a href="https://www.united-creation.com/legal.html" target="_blank" rel="noopener">Legal</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
 </body>
 </html>
