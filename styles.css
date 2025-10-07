@@ -33,7 +33,7 @@ body{font-family:'Satoshi',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helve
 .inline-video{width:100%;height:auto;border-radius:8px}
 
 /* TEXT */
-.text-lg{font-size:32px;line-height:140%}
+.text-lg{font-size:32px;line-height:140%;text-align:center}
 
 /* FOOTER */
 .footer{background:#fff;padding:0 20px 60px;opacity:0;animation:fadeOpacity .6s ease-out 1.2s forwards}
