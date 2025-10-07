@@ -24,28 +24,35 @@
   const inlineVideo = document.querySelector('.inline-video');
   const inlinePlaceholder = document.querySelector('.inline-placeholder');
   
-  // Hero video
-  if (heroVideo && heroPlaceholder) {
-    heroVideo.addEventListener('playing', () => {
-      heroPlaceholder.style.opacity = '0';
-      heroVideo.classList.add('playing');
-    });
+  const playVideos = () => {
+    if (heroVideo && heroPlaceholder) {
+      heroVideo.play().then(() => {
+        heroPlaceholder.style.opacity = '0';
+        heroVideo.classList.add('playing');
+      }).catch(() => {});
+    }
     
-    heroVideo.play().catch(e => {
-      console.log('Hero video autoplay blocked, keeping image');
-    });
-  }
+    if (inlineVideo && inlinePlaceholder) {
+      inlineVideo.play().then(() => {
+        inlinePlaceholder.style.display = 'none';
+        inlineVideo.style.display = 'block';
+        inlineVideo.classList.add('playing');
+      }).catch(() => {});
+    }
+  };
   
-  // Inline video
-  if (inlineVideo && inlinePlaceholder) {
-    inlineVideo.addEventListener('playing', () => {
-      inlinePlaceholder.style.display = 'none';
-      inlineVideo.style.display = 'block';
-      inlineVideo.classList.add('playing');
-    });
-    
-    inlineVideo.play().catch(e => {
-      console.log('Inline video autoplay blocked, keeping image');
-    });
-  }
+  // Try immediately
+  playVideos();
+  
+  // Try on any user interaction
+  ['touchstart', 'touchend', 'click', 'scroll'].forEach(event => {
+    document.addEventListener(event, playVideos, { once: true, passive: true });
+  });
+  
+  // Try when page becomes visible
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) {
+      setTimeout(playVideos, 100);
+    }
+  });
 })();
