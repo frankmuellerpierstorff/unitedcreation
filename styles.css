@@ -98,11 +98,25 @@ body{font-family:'Satoshi',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helve
   .footer__line,.footer__links{font-size:16px}
   .footer__content{text-align:center}
   .footer__single-line{display:none}
+  
+  /* Keep static images visible on mobile, hide videos */
+  .hero__placeholder{opacity:1!important}
+  .hero__video{display:none!important}
+  .inline-placeholder{display:block!important}
+  .inline-video{display:none!important}
 }
 @media (min-width:481px){
   .footer__line,.footer__links{display:none}
   .footer__single-line{display:block}
 }
+/* Mobile and tablet - keep static images */
+@media (max-width:768px){
+  .hero__placeholder{opacity:1!important}
+  .hero__video{display:none!important}
+  .inline-placeholder{display:block!important}
+  .inline-video{display:none!important}
+}
+
 @media (min-width:481px) and (max-width:800px){
   .content .container,.teaser__top,.teaser__center{padding-left:40px;padding-right:40px}
   .footer__content{text-align:center}

@@ -17,14 +17,24 @@
   items.forEach(el => io.observe(el));
 })();
 
-// Simple video loading
+// Simple video loading - disabled on mobile
 (function() {
   const heroVideo = document.querySelector('.hero__video');
   const heroPlaceholder = document.querySelector('.hero__placeholder');
   const inlineVideo = document.querySelector('.inline-video');
   const inlinePlaceholder = document.querySelector('.inline-placeholder');
   
+  // Detect mobile devices
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+                   window.innerWidth <= 768 || 
+                   ('ontouchstart' in window);
+  
   const playVideos = () => {
+    // Skip video loading on mobile devices
+    if (isMobile) {
+      return;
+    }
+    
     if (heroVideo && heroPlaceholder) {
       heroVideo.play().then(() => {
         heroPlaceholder.style.opacity = '0';
@@ -41,10 +51,10 @@
     }
   };
   
-  // Try immediately
+  // Try immediately (only on desktop)
   playVideos();
   
-  // Try on any user interaction
+  // Try on any user interaction (only on desktop)
   ['touchstart', 'touchend', 'click', 'scroll'].forEach(event => {
     document.addEventListener(event, playVideos, { once: true, passive: true });
   });
