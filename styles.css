@@ -16,6 +16,10 @@ body{font-family:'Satoshi',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helve
 .hero{position:relative;width:100vw;margin-left:calc(-50vw + 50%);height:100svh;overflow:hidden}
 .hero__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
 .hero__placeholder{opacity:1;animation:fadeOpacity .9s ease-out .12s forwards}
+@media (min-width:481px){
+  .hero__placeholder{display:none}
+  .hero::before{content:'';position:absolute;inset:0;background:var(--blue);z-index:1}
+}
 .hero__video{opacity:0}
 .hero__video.playing{opacity:1;animation:fadeOpacity .6s ease-out forwards}
 .hero__video::-webkit-media-controls{display:none!important}
