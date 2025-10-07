@@ -17,11 +17,34 @@
   items.forEach(el => io.observe(el));
 })();
 
-// Force autoplay videos
+// Handle video loading with image placeholders
 (function() {
-  const videos = document.querySelectorAll('video');
+  const heroVideo = document.querySelector('.hero__video');
+  const heroPlaceholder = document.querySelector('.hero__placeholder');
+  const inlineVideo = document.querySelector('.inline-video');
+  const inlinePlaceholder = document.querySelector('.inline-placeholder');
   
-  videos.forEach(video => {
-    video.play();
-  });
+  // Hero video
+  if (heroVideo && heroPlaceholder) {
+    heroVideo.addEventListener('playing', () => {
+      heroPlaceholder.style.opacity = '0';
+      heroVideo.classList.add('playing');
+    });
+    
+    heroVideo.play().catch(e => {
+      console.log('Hero video autoplay blocked, keeping image');
+    });
+  }
+  
+  // Inline video
+  if (inlineVideo && inlinePlaceholder) {
+    inlineVideo.addEventListener('playing', () => {
+      inlinePlaceholder.style.display = 'none';
+      inlineVideo.classList.add('playing');
+    });
+    
+    inlineVideo.play().catch(e => {
+      console.log('Inline video autoplay blocked, keeping image');
+    });
+  }
 })();
