@@ -51,12 +51,14 @@ body{font-family:'Satoshi',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helve
 
 /* CONTENT */
 .content{background:#fff;padding:120px 20px}
-.container{max-width:var(--max);margin:0 auto}
+.container{max-width:var(--max);margin:0 auto 80px auto}
+.container:last-child{margin-bottom:0}
 .inline-placeholder{width:100%;height:auto;border-radius:8px;display:block}
 .inline-video{width:100%;height:auto;border-radius:8px;display:none}
 
 /* TEXT */
-.text-lg{font-size:32px;line-height:140%;text-align:center}
+.text-lg{font-size:32px;line-height:140%;text-align:center;margin-bottom:80px}
+.text-lg:last-child{margin-bottom:0}
 
 /* FOOTER */
 .footer{background:#fff;padding:0 20px 60px;opacity:0;animation:fadeOpacity .6s ease-out 1.2s forwards}
