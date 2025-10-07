@@ -24,6 +24,15 @@ body{font-family:'Satoshi',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helve
 .hero__video::-webkit-media-controls-start-playback-button{display:none!important}
 .hero__video::-webkit-media-controls-overlay-play-button{display:none!important}
 .hero__video::-webkit-media-controls-enclosure{display:none!important}
+.hero__video::-webkit-media-controls-timeline{display:none!important}
+.hero__video::-webkit-media-controls-current-time-display{display:none!important}
+.hero__video::-webkit-media-controls-time-remaining-display{display:none!important}
+.hero__video::-webkit-media-controls-mute-button{display:none!important}
+.hero__video::-webkit-media-controls-volume-slider{display:none!important}
+.hero__video::-webkit-media-controls-fullscreen-button{display:none!important}
+.hero__video::-webkit-media-controls-rewind-button{display:none!important}
+.hero__video::-webkit-media-controls-return-to-realtime-button{display:none!important}
+.hero__video::-webkit-media-controls-toggle-closed-captions-button{display:none!important}
 .hero__header{position:absolute;top:80px;left:60px;right:60px;display:flex;align-items:center;justify-content:space-between;opacity:0;animation:fadeOpacity .6s ease-out .25s forwards}
 .hero__logo{height:40px;width:auto}
 .hero__arrow{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);opacity:0;animation:fadeOpacity .6s ease-out .4s forwards,bounce 2s ease-in-out 1.2s infinite;pointer-events:none}
