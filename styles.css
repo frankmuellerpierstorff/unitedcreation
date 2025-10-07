@@ -15,6 +15,10 @@ body{font-family:'Satoshi',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helve
 /* HERO */
 .hero{position:relative;width:100vw;margin-left:calc(-50vw + 50%);height:100svh;overflow:hidden}
 .hero__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:fadeOpacity .9s ease-out .12s forwards;pointer-events:none}
+.hero__bg::-webkit-media-controls{display:none!important}
+.hero__bg::-webkit-media-controls-panel{display:none!important}
+.hero__bg::-webkit-media-controls-play-button{display:none!important}
+.hero__bg::-webkit-media-controls-start-playback-button{display:none!important}
 .hero__header{position:absolute;top:80px;left:60px;right:60px;display:flex;align-items:center;justify-content:space-between;opacity:0;animation:fadeOpacity .6s ease-out .25s forwards}
 .hero__logo{height:40px;width:auto}
 .hero__arrow{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);opacity:0;animation:fadeOpacity .6s ease-out .4s forwards,bounce 2s ease-in-out 1.2s infinite;pointer-events:none}
