@@ -17,11 +17,26 @@
   items.forEach(el => io.observe(el));
 })();
 
-// Force autoplay videos
+// Handle video loading with spinner
 (function() {
-  const videos = document.querySelectorAll('video');
+  const heroVideo = document.querySelector('.hero__bg');
+  const heroLoading = document.getElementById('heroLoading');
   
-  videos.forEach(video => {
-    video.play();
-  });
+  if (heroVideo && heroLoading) {
+    // Hide spinner when video starts playing
+    heroVideo.addEventListener('playing', () => {
+      heroLoading.style.display = 'none';
+    });
+    
+    // Try to play the video
+    heroVideo.play().catch(e => {
+      console.log('Autoplay blocked:', e);
+    });
+  }
+  
+  // Handle inline video normally
+  const inlineVideo = document.querySelector('.inline-video');
+  if (inlineVideo) {
+    inlineVideo.play();
+  }
 })();
