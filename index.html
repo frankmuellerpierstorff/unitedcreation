@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <!-- HERO -->
   <section class="hero">
     <img class="hero__bg" src="./hero_new.png" alt="Hero background" />
 
@@ -24,67 +23,20 @@
       <h1 class="hero__title">We create tools for people<br>who love to play, produce,<br>and perform music.</h1>
     </div>
 
-    <div class="hero__arrow" aria-hidden="true">
-      <span>↓</span>
-    </div>
+    <footer class="hero__footer">
+      <p class="hero__footer-text">
+        ©2025 United Creation · 
+        <a href="https://tally.so/r/w8O9Zx" target="_blank" rel="noopener">Beta Program</a> · 
+        <a href="mailto:frank@united-creation.com">Contact</a> · 
+        <a href="https://www.united-creation.com/legal.html" target="_blank" rel="noopener">Legal</a>
+      </p>
+    </footer>
   </section>
 
-  <!-- FLOW SECTION (white) -->
-  <section class="flow-section">
-    <div class="container fade-on-view">
-      <h2 class="flow-section__title">We build for those who know there's nothing like being in flow — and nothing harder than getting back to it.</h2>
-    </div>
-  </section>
-
-  <!-- BETA SECTION (teal) -->
-  <section class="beta-section">
-    <a class="beta-section__box fade-on-view" href="https://tally.so/r/w8O9Zx" target="_blank" rel="noopener">
-      <h2 class="beta-section__title"><span class="beta-section__arrow-mobile">→ </span>Join our closed beta <span class="beta-section__regular">if you want to be part of our journey and help shape the tools we're creating.</span></h2>
-    </a>
-  </section>
-
-  <!-- ABOUT SECTION (purple) -->
-  <section class="about-section">
-    <div class="container">
-      <h2 class="about-section__title fade-on-view">About</h2>
-      
-      <div class="about-section__image-wrapper fade-on-view" data-delay="120">
-        <img class="about-section__image" src="./about.png" alt="About United Creation" />
-      </div>
-
-      <div class="about-section__text fade-on-view" data-delay="240">
-        <p>United Creation is a platform for the future of music. Built for people who play, produce and perform. Who jam, experiment, surface ideas, and follow what emerges. Who know there's nothing like being in flow — and nothing harder than getting back to it.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__content">
-        <div class="footer__left">
-          <div class="footer__social">
-            <a href="https://www.instagram.com/united.creation/" target="_blank" rel="noopener" aria-label="Instagram">
-              <img src="./instagram.png" alt="Instagram" class="footer__social-icon" />
-            </a>
-            <a href="https://www.tiktok.com/@united.creation" target="_blank" rel="noopener" aria-label="TikTok">
-              <img src="./Tik Tok.png" alt="TikTok" class="footer__social-icon" />
-            </a>
-          </div>
-          <p class="footer__copyright">©2025 United Creation</p>
-          <p class="footer__links">
-            <a href="https://tally.so/r/w8O9Zx" target="_blank" rel="noopener">Beta Program</a> · 
-            <a href="mailto:frank@united-creation.com">Contact</a> · 
-            <a href="https://www.united-creation.com/legal.html" target="_blank" rel="noopener">Legal</a>
-          </p>
-        </div>
-        <div class="footer__right">
-          <img src="./8c-logo-text.png" alt="United Creation" class="footer__logo" />
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script src="./script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelector('.hero__header').classList.add('loaded');
+    });
+  </script>
 </body>
 </html>
